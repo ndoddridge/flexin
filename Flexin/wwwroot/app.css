@@ -1,0 +1,155 @@
+:root {
+    color-scheme: dark;
+    --fx-bg: #0b0f14;
+    --fx-surface: #121820;
+    --fx-surface-elevated: #18202b;
+    --fx-border: #243041;
+    --fx-text: #e8edf4;
+    --fx-text-muted: #93a0b4;
+    --fx-accent: #2dd4bf;
+    --fx-accent-strong: #14b8a6;
+    --fx-accent-soft: rgba(45, 212, 191, 0.12);
+    --fx-danger: #f87171;
+    --fx-radius: 14px;
+    --fx-header-height: 3.75rem;
+    --fx-nav-height: 4.25rem;
+    --fx-content-max: 42rem;
+    --fx-touch: 2.75rem;
+    --fx-font: "Sora", "Segoe UI", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    min-height: 100%;
+    background: var(--fx-bg);
+    color: var(--fx-text);
+    font-family: var(--fx-font);
+    font-size: 16px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+body {
+    min-height: 100vh;
+    min-height: 100dvh;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input,
+textarea {
+    font: inherit;
+}
+
+h1,
+h2,
+h3 {
+    margin: 0;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: clamp(1.75rem, 4vw, 2.25rem);
+}
+
+h2 {
+    font-size: 1.25rem;
+}
+
+p {
+    margin: 0;
+}
+
+:focus-visible {
+    outline: 2px solid var(--fx-accent);
+    outline-offset: 3px;
+}
+
+.page-shell {
+    width: min(100%, var(--fx-content-max));
+    margin: 0 auto;
+    padding: 1.5rem 1.25rem 2rem;
+}
+
+.page-kicker {
+    margin-bottom: 0.5rem;
+    color: var(--fx-accent);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.page-lede {
+    margin-top: 0.75rem;
+    max-width: 34rem;
+    color: var(--fx-text-muted);
+    font-size: 1.05rem;
+}
+
+.placeholder-panel {
+    margin-top: 1.75rem;
+    padding: 1.25rem 1.35rem;
+    border: 1px solid var(--fx-border);
+    border-radius: var(--fx-radius);
+    background: var(--fx-surface);
+}
+
+.placeholder-panel p {
+    color: var(--fx-text-muted);
+}
+
+.placeholder-panel p + p {
+    margin-top: 0.75rem;
+}
+
+#blazor-error-ui {
+    display: none;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    padding: 0.85rem 1.25rem;
+    background: #3b1515;
+    color: #fecaca;
+    border-top: 1px solid #7f1d1d;
+}
+
+#blazor-error-ui .reload {
+    margin-left: 0.5rem;
+    color: #fff;
+    text-decoration: underline;
+}
+
+#blazor-error-ui .dismiss {
+    position: absolute;
+    top: 0.65rem;
+    right: 0.85rem;
+    cursor: pointer;
+}
+
+.blazor-error-boundary {
+    padding: 1rem 1.25rem;
+    border-radius: var(--fx-radius);
+    background: #3b1515;
+    color: #fecaca;
+}
+
+.blazor-error-boundary::after {
+    content: "An error has occurred.";
+}

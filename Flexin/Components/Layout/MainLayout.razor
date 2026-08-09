@@ -1,0 +1,40 @@
+﻿@inherits LayoutComponentBase
+
+<div class="app-frame">
+    <header class="app-header">
+        <div class="app-header__inner">
+            <a class="brand" href="/" aria-label="Flexin home">
+                <span class="brand__mark" aria-hidden="true"></span>
+                <span class="brand__name">Flexin</span>
+            </a>
+
+            <nav class="desktop-nav" aria-label="Primary">
+                <NavLink class="desktop-nav__link" href="/" Match="NavLinkMatch.All">Today</NavLink>
+                <NavLink class="desktop-nav__link" href="history">History</NavLink>
+                <NavLink class="desktop-nav__link" href="progress">Progress</NavLink>
+            </nav>
+        </div>
+    </header>
+
+    <main class="app-main">
+        @Body
+    </main>
+
+    <nav class="mobile-nav" aria-label="Primary">
+        <NavLink class="mobile-nav__link" href="/" Match="NavLinkMatch.All">
+            <span class="mobile-nav__label">Today</span>
+        </NavLink>
+        <NavLink class="mobile-nav__link" href="history">
+            <span class="mobile-nav__label">History</span>
+        </NavLink>
+        <NavLink class="mobile-nav__link" href="progress">
+            <span class="mobile-nav__label">Progress</span>
+        </NavLink>
+    </nav>
+</div>
+
+<div id="blazor-error-ui" data-nosnippet>
+    An unhandled error has occurred.
+    <a href="." class="reload">Reload</a>
+    <span class="dismiss" role="button" tabindex="0" aria-label="Dismiss">×</span>
+</div>

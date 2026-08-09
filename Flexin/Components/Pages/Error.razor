@@ -1,0 +1,31 @@
+﻿@page "/Error"
+@using System.Diagnostics
+
+<PageTitle>Error · Flexin</PageTitle>
+
+<section class="page-shell">
+    <p class="page-kicker">Something went wrong</p>
+    <h1>Error</h1>
+    <p class="page-lede">
+        An error occurred while processing your request.
+    </p>
+
+    @if (ShowRequestId)
+    {
+        <div class="placeholder-panel">
+            <p><strong>Request ID:</strong> <code>@RequestId</code></p>
+        </div>
+    }
+</section>
+
+@code {
+    [CascadingParameter]
+    private HttpContext? HttpContext { get; set; }
+
+    private string? RequestId { get; set; }
+
+    private bool ShowRequestId => !string.IsNullOrEmpty(RequestId);
+
+    protected override void OnInitialized() =>
+        RequestId = Activity.Current?.Id ?? HttpContext?.TraceIdentifier;
+}
