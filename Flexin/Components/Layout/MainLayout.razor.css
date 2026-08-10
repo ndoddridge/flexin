@@ -1,0 +1,125 @@
+.app-frame {
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: grid;
+    grid-template-rows: var(--fx-header-height) 1fr auto;
+    background: var(--fx-bg);
+}
+
+.app-header {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    border-bottom: 1px solid var(--fx-border);
+    background: rgba(11, 15, 20, 0.92);
+    backdrop-filter: blur(10px);
+}
+
+.app-header__inner {
+    width: min(100%, 64rem);
+    height: var(--fx-header-height);
+    margin: 0 auto;
+    padding: 0 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.7rem;
+    min-height: var(--fx-touch);
+}
+
+.brand__mark {
+    width: 0.85rem;
+    height: 0.85rem;
+    border-radius: 999px;
+    background: var(--fx-accent);
+    box-shadow: 0 0 0 4px var(--fx-accent-soft);
+}
+
+.brand__name {
+    font-size: 1.35rem;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+}
+
+.desktop-nav {
+    display: none;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+.desktop-nav__link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: var(--fx-touch);
+    padding: 0 0.95rem;
+    border-radius: 999px;
+    color: var(--fx-text-muted);
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 120ms ease, background-color 120ms ease;
+}
+
+.desktop-nav__link:hover {
+    color: var(--fx-text);
+    background: var(--fx-surface-elevated);
+}
+
+.desktop-nav__link.active {
+    color: var(--fx-bg);
+    background: var(--fx-accent);
+}
+
+.app-main {
+    width: 100%;
+    padding-bottom: calc(var(--fx-nav-height) + 0.5rem);
+}
+
+.mobile-nav {
+    position: sticky;
+    bottom: 0;
+    z-index: 20;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    min-height: var(--fx-nav-height);
+    padding: 0.4rem 0.5rem calc(0.4rem + env(safe-area-inset-bottom));
+    border-top: 1px solid var(--fx-border);
+    background: rgba(18, 24, 32, 0.96);
+    backdrop-filter: blur(10px);
+}
+
+.mobile-nav__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: var(--fx-touch);
+    border-radius: 12px;
+    color: var(--fx-text-muted);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.mobile-nav__link.active {
+    color: var(--fx-accent);
+    background: var(--fx-accent-soft);
+}
+
+@media (min-width: 768px) {
+    .desktop-nav {
+        display: flex;
+    }
+
+    .mobile-nav {
+        display: none;
+    }
+
+    .app-main {
+        padding-bottom: 2rem;
+    }
+}
